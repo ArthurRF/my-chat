@@ -119,6 +119,8 @@ document.getElementById("users_list").addEventListener("click", (e) => {
     socket.emit("start_chat", { idUser }, (response) => {
       idChatRoom = response.room.idChatRoom;
 
+      console.log(response);
+
       response.messages.forEach((message) => {
         const data = {
           message,

@@ -28,8 +28,8 @@ export class CreateUserService {
       }, {
         $set: {
           socketId,
-          avatar,
-          name
+          avatar: !!avatar ? avatar : userAlreadyExists.avatar,
+          name: !!name ? name : userAlreadyExists.name
         }
       }, {
         new: true,

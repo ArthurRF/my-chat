@@ -14,12 +14,10 @@ const ChatRoomSchema = new Schema({
       ref: 'Users'
     }
   ],
-  idChatRoom: [
-    {
-      type: String,
-      default: uuid()
-    }
-  ]
+  idChatRoom: {
+    type: String,
+    default: uuid
+  }
 });
 
 const ChatRoom = mongoose.model<ChatRoom>('ChatRoom', ChatRoomSchema);

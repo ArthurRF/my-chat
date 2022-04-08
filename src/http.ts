@@ -9,7 +9,11 @@ const app = express();
 
 const server = createServer(app)
 
-mongoose.connect('mongodb://localhost/my-socket-chat', {});
+mongoose.connect('mongodb://localhost/my-socket-chat', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+mongoose.set('useFindAndModify', false)
 
 app.use(express.static(path.join(__dirname, "..", "public")));
 
